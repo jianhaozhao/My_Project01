@@ -10,10 +10,14 @@
 
 #测试内容
 class A:
-    def __str__(self,name):
+    def __init__(self,name):
         self.name=name
 
 class B(A):
     pass
 
-
+if __name__=="__main__":
+    print("~"*30)
+    a=A("zhao")
+    print(a.name)
+    print("~" * 30)
