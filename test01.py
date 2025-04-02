@@ -8,16 +8,20 @@
 @Exp   : 
 '''
 
-#测试内容
-class A:
-    def __init__(self,name):
-        self.name=name
+#写一个单例模式
+class D_l:
+    __T=None
+    def __new__(cls,*args):
+        if not cls.__T:
+           cls.__T=super().__new__(cls)
+        return cls.__T
 
-class B(A):
-    pass
 
 if __name__=="__main__":
     print("~"*30)
-    a=A("zhao")
+    a=D_l()
+    a.name="zhao"
     print(a.name)
     print("~" * 30)
+    c=D_l()
+    print(c.name)
